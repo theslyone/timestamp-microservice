@@ -13,3 +13,8 @@ code {
   border-left: 2px solid gray;
   padding-left: 20px;
 }
+
+footer{
+  position: fixed;
+  margin-bottom: 0px;
+}
