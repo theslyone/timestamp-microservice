@@ -8,5 +8,5 @@ app.get("/", function(req,res){
 });
 
 var server = http.createServer(app);
-server.listen(8080);
+server.listen(process.env.PORT || 8080);
 console.log("app started");
