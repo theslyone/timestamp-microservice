@@ -1,9 +1,27 @@
 html
-  head
-    title= title
-    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css')
-  body
-    div.ui.text.container
-      h1.ui.centered.header= message
-      footer
-        p Powered by Node.js
+	head
+		title Timestamp microservice
+		link(rel='stylesheet' href='semantic.css')
+		link(rel='stylesheet' href='style.css')
+	body
+		div.ui.container
+			h1.ui.header API Basejump: Timestamp microservice
+			div.user-story
+				h3.ui.header User stories:
+				ol
+					li I can pass a string as a parameter, and it will check to
+						| see whether that string contains either a unix timestamp or a natural language date (example: January 1, 2016)
+					li If it does, it returns both the Unix timestamp and the natural language form of that date.
+					li If it does not contain a date or Unix timestamp, it returns null for those properties.
+
+			h2 Example usage:
+			code https://timestamp-ms.herokuapp.com/December%2015,%202015
+			br
+			code https://timestamp-ms.herokuapp.com/1450137600
+
+			h2 Example output:
+			code { "unix": 1450137600, "natural": "December 15, 2015" }
+
+
+			footer
+				p Powered by Node.js
