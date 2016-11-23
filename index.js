@@ -2,9 +2,11 @@ var http = require("http");
 var express = require("express");
 var app = express();
 
+app.set('views', __dirname + '/views');
+app.set("view engine", "pug");
+
 app.get("/", function(req,res){
-    res.writeHead(200, {"Content-Type": "text/plain"});
-    res.end("Hello world!!!");
+    res.render('index', { title: 'Hey', message: 'Hello there!' });
 });
 
 var server = http.createServer(app);
