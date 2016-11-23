@@ -5,8 +5,14 @@ var app = express();
 app.set('views', __dirname + '/views');
 app.set("view engine", "pug");
 
-app.get("/", function(req,res){
-    res.render('index', { title: 'Hey', message: 'Hello there!' });
+app.get("/:datestr", function(req,res){
+    var datestr = req.param.datestr;
+    if(datestr){
+      res.end("processing request");      
+    }
+    else{
+      res.render('index', { title: 'Hey', message: 'Hello there!' });
+    }
 });
 
 var server = http.createServer(app);
